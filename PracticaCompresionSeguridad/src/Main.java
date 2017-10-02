@@ -61,7 +61,7 @@ public class Main {
 				fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
 				// Creamos el filtro
-				FileNameExtensionFilter filtro = new FileNameExtensionFilter("*Texto", "txt");
+				FileNameExtensionFilter filtro = new FileNameExtensionFilter("Texto (*.txt)", "txt");
 
 				// Le indicamos el filtro
 				fc.setFileFilter(filtro);
@@ -71,9 +71,11 @@ public class Main {
 
 				// Si el usuario, pincha en aceptar
 				if (seleccion == JFileChooser.APPROVE_OPTION) {
-
 					// Seleccionamos el fichero
 					File[] ficheros = fc.getSelectedFiles();
+					System.out.println("Archivo " + ficheros[0].getName() + " seleccionado");
+				} else {
+					System.out.println("Selección de archivo cancelada");
 				}
 			}
 		});
